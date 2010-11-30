@@ -95,9 +95,9 @@ if (!$debug) {header("Content-Type: text/xml");
 \t\t<uri>http://kyl191.net</uri>
 \t</contributor>
 \t<id>http://".$_SERVER['SERVER_NAME'].$_SERVER['PHP_SELF']."</id>
-\t<subtitle>Comic by Tom Fischbach, Atom feed by kyl191/aj</subtitle>
+\t<subtitle>Comic by Tom Fischbach</subtitle>
 \t<rights>Comic copyright Tom Fischbach</rights>
-\t<generator version=\"0.1a\">Custom generator for Tom Fischbach (2kinds.com)</generator>
+\t<generator version=\"0.1b\">Custom generator for Tom Fischbach (2kinds.com)</generator>
 \t<link rel=\"self\" href=\"http://".$_SERVER['SERVER_NAME'].$_SERVER['PHP_SELF']."\"  type=\"application/rss+xml\" />\n";}
 
 
