@@ -13,7 +13,7 @@ $adminemail = "2kindsrss-nospam@nospam.kyl191.net"; // Set it to my address, tho
 $debug = false; 
 
 // Force debug if the correct username and password are entered, and force debug mode off if the username and password aren't entered
-if ($_GET["passwd"]==$password){
+if (isset($_GET["passwd"]) && $_GET["passwd"]==$password){
     $debug=true;
     echo "<b>Warning! Debug mode is on!</b><br />\n";
 } else {
@@ -90,7 +90,7 @@ if (!$debug) {header("Content-Type: text/xml");
 \t\t<email>twokinds-spam@gmail.com</email>
 \t</author>
 \t<contributor>
-\t\t<name>kyl191/aj</name>
+\t\t<name>kyl191</name>
 \t\t<email>2kindsrss-spam@nospam.kyl191.net</email>
 \t\t<uri>http://kyl191.net</uri>
 \t</contributor>
@@ -119,7 +119,7 @@ if (($debug)&&(isset($_GET['items']))){
 }
 
 $item_counter = 1; // Start at 1
-$file_count = count($files)+3; // Hack due to the fact that not all comics are stored in the images/ folder
+$file_count = count($files)+2; // Hack due to the fact that not all comics are stored in the images/ folder
 
 foreach ($files as $filename) {
 
