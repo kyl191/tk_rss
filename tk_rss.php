@@ -39,7 +39,7 @@ if ($handle = @ opendir($dir)) {
         // Only add files matching a certain criteria to the 'files' array
         // To ignore '.' and '..', add ($file != "." && $file != "..") 
         // The first 8 characters of the filename are numbers and the file extension is "jpg"
-        if ((is_numeric(substr($file,0,8))) && (substr($file, strrpos($file, '.') + 1)=="jpg")) {
+        if ((is_numeric(substr($file,0,8))) && (substr($file, strrpos($file, '.') + 1)=="jpg") && (substr($file,(strrpos($file, '.') - 2),2) {
             array_push ($files, $file);
         }
     }
