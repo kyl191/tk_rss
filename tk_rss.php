@@ -48,7 +48,6 @@ if ($handle = @ opendir($dir)) {
 
     // Sort the filenames in reverse order
     // This works if your files are named according to date.
-    // To-Do: Change to sort by file modified time instead - most recent file will come first
     rsort($files);
 }
 
