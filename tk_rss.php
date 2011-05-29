@@ -87,6 +87,7 @@ if (!$debug) {header("Content-Type: text/xml");
 \t<author>
 \t\t<name>Tom Fischbach</name>
 \t\t<email>twokinds-spam@gmail.com</email>
+\t\t<uri>http://2kinds.com</uri>
 \t</author>
 \t<contributor>
 \t\t<name>kyl191</name>
