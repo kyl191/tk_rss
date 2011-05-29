@@ -167,7 +167,7 @@ foreach ($files as $filename) {
         // If it's the first item, force the link to go to the front page, otherwise, link to the comic in the archive
         if ($item_counter == 1) {
             echo "\t\t<content type=\"html\">Comic for $date is located at &lt;a href=\"http://".$_SERVER['SERVER_NAME']."/\"&gt;http://".$_SERVER['SERVER_NAME']."/"."&lt;/a&gt;</content>
-		<link href=\"http://".$_SERVER['SERVER_NAME']."\" rel=\"alternate\" hreflang=\"en-us\" title=\"Comic for $date\"/>\n";
+		<link href=\"http://".$_SERVER['SERVER_NAME']."/?".$date."\" rel=\"alternate\" hreflang=\"en-us\" title=\"Comic for $date\"/>\n";
         } else {
             echo "\t\t<content type=\"html\">Comic for $date is located at &lt;a href=\"http://twokinds.net/?p=$page\"&gt;http://twokinds.net/?p=$page&lt;/a&gt;</content>
 		<link href=\"http://twokinds.net/?p=$page\" rel=\"alternate\" hreflang=\"en-us\" title=\"Comic for $date\"/>\n";
