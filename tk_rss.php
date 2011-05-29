@@ -78,6 +78,12 @@ if ($debug) {
     }
 }
 
+if (isset($_GET["name"])){
+	$subtitle = "Who's awesome? You're awesome, " . $_GET["name"] . "!";
+} else {
+	$subtitle = "Comic by Tom Fischbach";
+}
+
 // RSS feed header - Outputs the RSS feed formatting headers, but only if debug mode is turned off - which is the normal status anyway though...
 if (!$debug) {header("Content-Type: text/xml");
     echo "<?xml version=\"1.0\" encoding=\"utf-8\"?>
@@ -95,7 +101,7 @@ if (!$debug) {header("Content-Type: text/xml");
 \t\t<uri>http://kyl191.net</uri>
 \t</contributor>
 \t<id>http://".$_SERVER['SERVER_NAME'].$_SERVER['PHP_SELF']."</id>
-\t<subtitle>Comic by Tom Fischbach</subtitle>
+\t<subtitle>$subtitle</subtitle>
 \t<rights>Comic copyright Tom Fischbach</rights>
 \t<generator version=\"0.1b\">Custom generator for Tom Fischbach (2kinds.com)</generator>
 \t<link rel=\"self\" href=\"http://".$_SERVER['SERVER_NAME'].$_SERVER['PHP_SELF']."\"  type=\"application/rss+xml\" />\n";}
