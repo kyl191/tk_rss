@@ -176,11 +176,4 @@ foreach ($files as $filename) {
     //Added a feed item, increment itemcounter by 1
     $item_counter--; 
 }
-
-//
-if (!$debug){
-    echo "</feed>";
-} else {
-    echo "<br /><b>Warning! Debug mode is on!</b>";
-}
 ?>
