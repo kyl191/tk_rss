@@ -124,13 +124,14 @@ if (($debug)&&(isset($_GET['items']))){
     echo "<br /><br /><b>Item info:</b> \n";
 }
 
-$item_counter = 1; // Start at 1
-$file_count = count($files)+2; // Hack due to the fact that not all comics are stored in the images/ folder
+$item_counter = 0; // Start at 0 because the first comic will just direct to the front page.
+// $file_count = count($files)+2; // Hack due to the fact that not all comics are stored in the images/ folder
 
 foreach ($files as $filename) {
 
-    // Die if we've already listed the number of comics specified - default case will die after 5, because 6 > 5
-    if ($item_counter > $max_item_counter) break;
+    // Die if we've already listed the number of comics specified - default case will die after 3, because 3 > 3-1
+	// We have to subtract 1 from max_item_counter because item_counter is starting from 0
+    if (abs($item_counter) > $max_item_counter-1) break;
     
     // Convert the filename of the comic into a unix timestamp, then converts the timestamp into a date
     // Used in the title of the rss feed item
@@ -143,10 +144,14 @@ foreach ($files as $filename) {
     
     // Set & write the last update time of the feed as the time the last comic was uploaded
     // Only do this for the first item
-    if (($item_counter == 1)&&(!$debug)){echo "	<updated>$pub</updated>\n\n";}
+    if (($item_counter == 0)&&(!$debug)){echo "	<updated>$pub</updated>\n\n";}
     
     // Page of comic in archive is equal to the number of files minus the counter of the current item
-    $page = (string)($file_count - $item_counter);
+    //$page = (string)($file_count - $item_counter);
+
+    // We're using negative indexes now, so take the negative of the item count
+    $page = 0-$item_counter;
+	echo $page;
 
     // If item details are requested in debug mode...
      if (($debug)&&(isset($_GET['items']))){
@@ -165,7 +170,7 @@ foreach ($files as $filename) {
 		<id>$date</id>\n";
 
         // If it's the first item, force the link to go to the front page, otherwise, link to the comic in the archive
-        if ($item_counter == 1) {
+        if ($item_counter == 0) {
             echo "\t\t<content type=\"html\">Comic for $date is located at &lt;a href=\"http://".$_SERVER['SERVER_NAME']."/\"&gt;http://".$_SERVER['SERVER_NAME']."/"."&lt;/a&gt;</content>
 		<link href=\"http://".$_SERVER['SERVER_NAME']."/?".$date."\" rel=\"alternate\" hreflang=\"en-us\" title=\"Comic for $date\"/>\n";
         } else {
@@ -187,7 +192,7 @@ foreach ($files as $filename) {
     
     }
     //Added a feed item, increment itemcounter by 1
-    $item_counter++; 
+    $item_counter--; 
 }
 
 
