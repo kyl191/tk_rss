@@ -150,7 +150,7 @@ foreach ($files as $filename) {
     //$page = (string)($file_count - $item_counter);
 
     // We're using negative indexes now, so take the negative of the item count
-    $page = 0-$item_counter;
+    $page = $item_counter;
 	echo $page;
 
     // If item details are requested in debug mode...
