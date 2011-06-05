@@ -44,7 +44,7 @@ if ($handle = @ opendir($dir)) {
     closedir($handle);
 
     // Sort the filenames in reverse order
-    // This works if your files are named according to date.
+    // This works since the files are named according to date.
     rsort($files);
 }
 
