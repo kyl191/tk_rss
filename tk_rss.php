@@ -32,12 +32,11 @@ if ($handle = @ opendir($dir)) {
     
     //while there are still files in the directory unread, do...
     while (($file = readdir($handle))!== false) {
-        if (isset($_GET['files'])&&($debug)){echo "$file<br />\n";}
-        
         // Only add files matching a certain criteria to the 'files' array
         // To ignore '.' and '..', add ($file != "." && $file != "..") 
         // The first 8 characters of the filename are numbers and the file extension is "jpg"
         if ((is_numeric(substr($file,0,8))) && (strcasecmp(substr($file,-4),".jpg") == 0) && (strcasecmp(substr($file,(strrpos($file, '.') - 2),2),"nt") != 0 ) ) {
+            if (isset($_GET['files'])&&($debug)){echo "$file<br />\n";}
             array_push ($files, $file);
         }
     }
