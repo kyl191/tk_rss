@@ -155,10 +155,10 @@ foreach ($files as $filename) {
 
         // If it's the first item, force the link to go to the front page, otherwise, link to the comic in the archive
         if ($item_counter == 0) {
-            echo "\t\t<content type=\"html\">Comic for $date is located at &lt;a href=\"http://".$_SERVER['SERVER_NAME']."/\"&gt;http://".$_SERVER['SERVER_NAME']."/"."&lt;/a&gt;</content>
+            echo "\t<content type=\"html\">Comic for $date is located at &lt;a href=\"http://".$_SERVER['SERVER_NAME']."/\"&gt;http://".$_SERVER['SERVER_NAME']."/"."&lt;/a&gt;</content>
         <link href=\"http://".$_SERVER['SERVER_NAME']."/?".$date."\" rel=\"alternate\" hreflang=\"en-us\" title=\"Comic for $date\"/>\n";
         } else {
-            echo "\t\t<content type=\"html\">Comic for $date is located at &lt;a href=\"http://twokinds.net/?p=$page\"&gt;http://twokinds.net/?p=$page&lt;/a&gt;</content>
+            echo "\t<content type=\"html\">Comic for $date is located at &lt;a href=\"http://twokinds.net/?p=$page\"&gt;http://twokinds.net/?p=$page&lt;/a&gt;</content>
         <link href=\"http://twokinds.net/?p=$page\" rel=\"alternate\" hreflang=\"en-us\" title=\"Comic for $date\"/>\n";
         }
 
@@ -169,7 +169,7 @@ foreach ($files as $filename) {
                 echo "\t\t<link rel=\"enclosure\" href=\"http://".$_SERVER['SERVER_NAME']."/images/".$filename."\" length=\"".filesize($dir.$filename)."\" type=\"image/jpeg\" />\n";
             }
         // Set the publication date of the entry to the file modified time
-        echo "\t\t<updated>$pub</updated>\n\t</entry>\n\n";
+        echo "\t<updated>$pub</updated>\n\t</entry>\n\n";
     }
     //Added a feed item, increment itemcounter by 1
     $item_counter--; 
