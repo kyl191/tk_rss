@@ -126,7 +126,7 @@ foreach ($files as $filename) {
     // Convert the filename of the comic into a unix timestamp, then converts the timestamp into a date
     // Used in the title of the rss feed item
     // Format: 4-digit year, 2 digit month (with leading zeros), 2 digit day (with leading zeros)
-    $date = date("Y-m-d", strtotime(substr($filename,0,8))); 
+    $date = DateTime::createFromFormat("Ymd", substr($filename,0,8))->format("l, F jS, Y"); 
     // Use the time the file was modified (i.e. uploaded) as the publish date
     // Note: Using the same directory as declared previously
     $pub = date(DATE_ATOM, filemtime($dir.$filename));
