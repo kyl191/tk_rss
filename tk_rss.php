@@ -168,7 +168,6 @@ foreach ($files as $filename) {
             if(isset($_GET['show_image'])&&(!$debug)){
                 echo "\t\t<link rel=\"enclosure\" href=\"http://".$_SERVER['SERVER_NAME']."/images/".$filename."\" length=\"".filesize($dir.$filename)."\" type=\"image/jpeg\" />\n";
             }
-
         // Set the publication date of the entry to the file modified time
         echo "\t\t<updated>$pub</updated>\n\t</entry>\n\n";
     }
