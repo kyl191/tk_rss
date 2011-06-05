@@ -3,7 +3,6 @@
 // RSS feed generator for TwoKinds
 
 // init section
-$password = "td4mowphmf"; // Access debug details
 $files = array();
 // Set the feed admin contact email
 $adminemail = "2kindsrss-nospam@nospam.kyl191.net"; // Set it to my address, though it should be changed if necessary
@@ -12,8 +11,8 @@ $adminemail = "2kindsrss-nospam@nospam.kyl191.net"; // Set it to my address, tho
 // debug mode - shows variables, and prints plain text to the browser if set to true
 $debug = false; 
 
-// Force debug if the correct username and password are entered, and force debug mode off if the username and password aren't entered
-if (isset($_GET["passwd"]) && $_GET["passwd"]==$password){
+// Force debug if requested, otherwise, suppress debug details
+if (isset($_GET["debug"])){
     $debug=true;
     echo "<b>Warning! Debug mode is on!</b><br />\n";
 } else {
