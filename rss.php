@@ -107,7 +107,7 @@ flush();
 if (isset($_GET['number'])&&($_GET['number']<26)){
     $max_item_counter = $_GET['number'];
 } else {
-    $max_item_counter = 3;
+    $max_item_counter = 5;
 }
 
 // Debug mode - show the item detail
