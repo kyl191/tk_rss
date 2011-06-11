@@ -82,11 +82,10 @@ if (!$debug) {header("Content-Type: text/xml");
     echo "<?xml version=\"1.0\" encoding=\"utf-8\"?>
 <feed xmlns=\"http://www.w3.org/2005/Atom\">
 \t<title>TwoKinds</title>
-\t<link href=\"http://2kinds.com/\" />
+\t<link href=\"http://twokinds.keenspot.com/\" />
 \t<author>
 \t\t<name>Tom Fischbach</name>
 \t\t<email>twokinds-spam@gmail.com</email>
-\t\t<uri>http://2kinds.com</uri>
 \t</author>
 \t<contributor>
 \t\t<name>kyl191</name>
