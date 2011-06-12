@@ -150,7 +150,7 @@ foreach ($files as $filename) {
         // Print the title, link, guid and pubdate for each feed item
         echo "\t<entry>
         <title>Comic for $date</title>
-        <id>$date</id>\n";
+        <id>http://twokinds.keenspot.com/archive.php?$pub</id>\n";
 
         // If it's the first item, force the link to go to the front page, otherwise, link to the comic in the archive
         if ($item_counter == 1) {
