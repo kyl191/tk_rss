@@ -149,8 +149,8 @@ foreach ($files as $filename) {
     if (!$debug){
         // Print the title, link, guid and pubdate for each feed item
         echo "\t<entry>
-        <title>Comic for $date</title>
-        <id>http://twokinds.keenspot.com/archive.php?$pub</id>\n";
+\t\t<title>Comic for $date</title>
+\t\t<id>http://twokinds.keenspot.com/archive.php?$pub</id>\n";
 
         // If it's the first item, force the link to go to the front page, otherwise, link to the comic in the archive
         if ($item_counter == 1) {
@@ -158,7 +158,7 @@ foreach ($files as $filename) {
         <link href=\"http://".$_SERVER['SERVER_NAME']."/?".$pub."\" rel=\"alternate\" hreflang=\"en-us\" title=\"Comic for $date\"/>\n";
         } else {
             echo "\t\t<content type=\"html\">Comic for $date is located at &lt;a href=\"http://twokinds.keenspot.com/archive.php?p=$page\"&gt;http://twokinds.keenspot.com/archive.php?p=$page&lt;/a&gt;</content>
-        <link href=\"http://twokinds.keenspot.com/archive.php/?p=$page\" rel=\"alternate\" hreflang=\"en-us\" title=\"Comic for $date\"/>\n";
+\t\t<link href=\"http://twokinds.keenspot.com/archive.php/?p=$page\" rel=\"alternate\" hreflang=\"en-us\" title=\"Comic for $date\"/>\n";
         }
 
         // Add the file as an enclosure
@@ -168,7 +168,7 @@ foreach ($files as $filename) {
                 echo "\t\t<link rel=\"enclosure\" href=\"http://".$_SERVER['SERVER_NAME']."/images/".$filename."\" length=\"".filesize($dir.$filename)."\" type=\"image/jpeg\" />\n";
             }
         // Set the publication date of the entry to the file modified time
-        echo "\t\t<updated>$pub</updated>\n\t</entry>";
+        echo "\t\t<updated>$pub</updated>\n\t</entry>\n";
     }
     //Added a feed item, increment itemcounter by 1
     $item_counter--; 
