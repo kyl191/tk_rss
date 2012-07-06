@@ -102,7 +102,7 @@ if (!$debug) {header("Content-Type: text/xml");
 flush();
 
 // RSS feed items - Outputs the individual RSS feed items (Links to the comics)
-// Set the number of comics to show - default is 3
+// Set the number of comics to show - default is 5
 // Limit the max number of comic links to 25 - Seriously don't need that many more
 if (isset($_GET['number'])&&($_GET['number']<26)){
     $max_item_counter = $_GET['number'];
