@@ -78,7 +78,7 @@ if (isset($_GET["name"])){
 }
 
 // RSS feed header - Outputs the RSS feed formatting headers, but only if debug mode is turned off - which is the normal status anyway though...
-if (!$debug) {header("Content-Type: text/xml");
+if (!$debug) {header("Content-Type: application/rss+xml; charset=utf-8");
     echo "<?xml version=\"1.0\" encoding=\"utf-8\"?>
 <feed xmlns=\"http://www.w3.org/2005/Atom\">
 \t<title>TwoKinds</title>
