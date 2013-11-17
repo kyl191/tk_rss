@@ -158,7 +158,7 @@ foreach ($files as $filename) {
         <link href=\"http://".$_SERVER['SERVER_NAME']."/?".$pub."\" rel=\"alternate\" hreflang=\"en-us\" title=\"Comic for $date\"/>\n";
         } else {
             echo "\t\t<content type=\"html\">Comic for $date is located at &lt;a href=\"http://twokinds.keenspot.com/archive.php?p=$page\"&gt;http://twokinds.keenspot.com/archive.php?p=$page&lt;/a&gt;</content>
-\t\t<link href=\"http://twokinds.keenspot.com/archive.php/?p=$page\" rel=\"alternate\" hreflang=\"en-us\" title=\"Comic for $date\"/>\n";
+\t\t<link href=\"http://twokinds.keenspot.com/archive.php?p=$page\" rel=\"alternate\" hreflang=\"en-us\" title=\"Comic for $date\"/>\n";
         }
 
         // Add the file as an enclosure
